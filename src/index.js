@@ -48,12 +48,15 @@ if(selected >= 0) {
 
 async function Fast(){
 
+const memberid = credentials.memberid
+const password = credentials.password
+
+for (let i = 0; i < memberid.length ; i++){
+
 console.log('Serverside Activated...Waiting'.magenta);
 
 cron.schedule('0 44 7 * * *', function() {
 
-const memberid = credentials.memberid
-let password = credentials.password
 const main_url = 'https://members.bellevueclub.com/group/pages/tennis-court-reservations';
 
 async function givePage(){
@@ -69,10 +72,10 @@ async function gen(page, browser){
     await page.waitForTimeout(500);
     await page.waitForSelector("input[class='field login-field']");
     await page.click("input[class='field login-field']", elem => elem.click());
-    await page.type("input[class='field login-field']", memberid, {delay: 50});
+    await page.type("input[class='field login-field']", memberid[i], {delay: 50});
     await page.waitForTimeout(25);
     await page.click("input[class='field password-field']", elem => elem.click());
-    await page.type("input[class='field password-field']", password, {delay: 50});
+    await page.type("input[class='field password-field']", password[i], {delay: 50});
     await page.waitForTimeout(25);
     await page.click("button[class='btn btn-sign-in btn-primary']", elem => elem.click());
     console.log('Successfully Logged In!'.cyan);
@@ -380,6 +383,8 @@ async function checkout(){
   
 }
 
+}
+
 
 
 
@@ -387,12 +392,16 @@ async function checkout(){
 
 async function Safe(){
 
+const memberid = credentials.memberid
+const password = credentials.password
+
+for (let i = 0; i < memberid.length ; i++){
+
 console.log('Serverside Activated...Waiting'.magenta);
 
 cron.schedule('0 44 7 * * *', function() {
 
-    const memberid = credentials.memberid
-    let password = credentials.password
+
     const main_url = 'https://members.bellevueclub.com/group/pages/tennis-court-reservations';
     
     async function givePage(){
@@ -408,10 +417,10 @@ cron.schedule('0 44 7 * * *', function() {
         await page.waitForTimeout(500);
         await page.waitForSelector("input[class='field login-field']");
         await page.click("input[class='field login-field']", elem => elem.click());
-        await page.type("input[class='field login-field']", memberid, {delay: 50});
+        await page.type("input[class='field login-field']", memberid[i], {delay: 50});
         await page.waitForTimeout(25);
         await page.click("input[class='field password-field']", elem => elem.click());
-        await page.type("input[class='field password-field']", password, {delay: 50});
+        await page.type("input[class='field password-field']", password[i], {delay: 50});
         await page.waitForTimeout(25);
         await page.click("button[class='btn btn-sign-in btn-primary']", elem => elem.click());
         console.log('Successfully Logged In!'.cyan);
@@ -717,5 +726,6 @@ cron.schedule('0 44 7 * * *', function() {
 
     }, null, true, 'America/Los_Angeles');
       
+}
     }
     
