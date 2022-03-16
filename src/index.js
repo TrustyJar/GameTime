@@ -4,6 +4,7 @@ const fs = require('fs');
 const puppeteer = require('puppeteer-extra');
 const credentials = JSON.parse(fs.readFileSync('./configs.json', 'utf-8'));
 const { Webhook, MessageBuilder } = require('discord-webhook-node');
+const hook = new Webhook(credentials.discordWebhook);
 const StealthPlugin = require('puppeteer-extra-plugin-stealth');
 puppeteer.use(StealthPlugin())
 const chromePaths = require('chrome-paths');
@@ -95,7 +96,7 @@ async function Fast(){
                     anchors.map(anchor => {
                         const d1 = new Date().getDate();
                         const d2 = d1;
-                        if(anchor.textContent == d1 + 6) {
+                        if(anchor.textContent == d1 + 7) {
                             anchor.click();
                             anchor.click();
                             return
@@ -130,6 +131,7 @@ async function Fast(){
                     await page.click("button[class='ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only ui-area-btn ui-area-btn-success radius-none margin-right-5px btn-save']", elem => elem.click(), { clickCount: 3 });
                     await page.waitForTimeout(1000);  
                     console.log('Successfully Reserved'.bold .green)
+                    log();
                     await page.waitForTimeout(2000);
                 }
                 else{
@@ -145,6 +147,7 @@ async function Fast(){
                             await page.click("button[class='ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only ui-area-btn ui-area-btn-success radius-none margin-right-5px btn-save']", elem => elem.click(), { clickCount: 3 });
                             await page.waitForTimeout(1000);
                             console.log('Successfully Reserved'.bold .green)
+                            log();
                             await page.waitForTimeout(2000);
                         }
                         else{
@@ -160,6 +163,7 @@ async function Fast(){
                                     await page.click("button[class='ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only ui-area-btn ui-area-btn-success radius-none margin-right-5px btn-save']", elem => elem.click(), { clickCount: 3 });
                                     await page.waitForTimeout(1000);
                                     console.log('Successfully Reserved'.bold .green)
+                                    log();
                                     await page.waitForTimeout(2000);
                                 }
                                 else{
@@ -176,6 +180,7 @@ async function Fast(){
                                             await page.click("button[class='ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only ui-area-btn ui-area-btn-success radius-none margin-right-5px btn-save']", elem => elem.click(), { clickCount: 3 });
                                             await page.waitForTimeout(1000);
                                             console.log('Successfully Reserved'.bold .green)
+                                            log();
                                             await page.waitForTimeout(5000);
                                         }
                                         else{
@@ -192,6 +197,7 @@ async function Fast(){
                                                     await page.click("button[class='ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only ui-area-btn ui-area-btn-success radius-none margin-right-5px btn-save']", elem => elem.click(), { clickCount: 3 });
                                                     await page.waitForTimeout(1000);
                                                     console.log('Successfully Reserved'.bold .green)
+                                                    log();
                                                     await page.waitForTimeout(5000);
                                                 }
                                                 else{
@@ -209,6 +215,7 @@ async function Fast(){
                                                             await page.click("button[class='ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only ui-area-btn ui-area-btn-success radius-none margin-right-5px btn-save']", elem => elem.click(), { clickCount: 3 });
                                                             await page.waitForTimeout(1000);
                                                             console.log('Successfully Reserved'.bold .green)
+                                                            log();
                                                             await page.waitForTimeout(5000);
                                                         }
                                                         else{
@@ -225,6 +232,7 @@ async function Fast(){
                                                                     await page.click("button[class='ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only ui-area-btn ui-area-btn-success radius-none margin-right-5px btn-save']", elem => elem.click(), { clickCount: 3 });
                                                                     await page.waitForTimeout(1000);
                                                                     console.log('Successfully Reserved'.bold .green)
+                                                                    log();
                                                                     await page.waitForTimeout(5000);
                                                                 }
                                                                 else{
@@ -241,6 +249,7 @@ async function Fast(){
                                                                             await page.click("button[class='ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only ui-area-btn ui-area-btn-success radius-none margin-right-5px btn-save']", elem => elem.click(), { clickCount: 3 });
                                                                             await page.waitForTimeout(1000);
                                                                             console.log('Successfully Reserved'.bold .green)
+                                                                            log();
                                                                             await page.waitForTimeout(5000); 
                                                                         }
                                                                         else{
@@ -256,6 +265,7 @@ async function Fast(){
                                                                                     await page.waitForTimeout(5000);
                                                                                     await page.click("button[class='ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only ui-area-btn ui-area-btn-success radius-none margin-right-5px btn-save']", elem => elem.click(), { clickCount: 3 });                                                                                await page.waitForTimeout(1000);
                                                                                     console.log('Successfully Reserved'.bold .green)
+                                                                                    log();
                                                                                     await page.waitForTimeout(5000);
                                                                                 }
                                                                                 else{
@@ -272,6 +282,7 @@ async function Fast(){
                                                                                             await page.waitForTimeout(5000);
                                                                                             await page.click("button[class='ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only ui-area-btn ui-area-btn-success radius-none margin-right-5px btn-save']", elem => elem.click(), { clickCount: 3 });                                                                                        await page.waitForTimeout(1000);
                                                                                             console.log('Successfully Reserved'.bold .green)
+                                                                                            log();
                                                                                             await page.waitForTimeout(5000);
                                                                                         }
                                                                                         else{
@@ -287,6 +298,7 @@ async function Fast(){
                                                                                                     await page.waitForTimeout(5000);
                                                                                                     await page.click("button[class='ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only ui-area-btn ui-area-btn-success radius-none margin-right-5px btn-save']", elem => elem.click(), { clickCount: 3 });                                                                                                await page.waitForTimeout(1000);
                                                                                                     console.log('Successfully Reserved'.bold .green)
+                                                                                                    log();
                                                                                                     await page.waitForTimeout(5000);
                                                                                                 }
                                                                                                 else{
@@ -302,6 +314,7 @@ async function Fast(){
                                                                                                             await page.waitForTimeout(5000);
                                                                                                             await page.click("button[class='ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only ui-area-btn ui-area-btn-success radius-none margin-right-5px btn-save']", elem => elem.click(), { clickCount: 3 });                                                                                                        await page.waitForTimeout(1000);
                                                                                                             console.log('Successfully Reserved'.bold .green)
+                                                                                                            log();
                                                                                                             await page.waitForTimeout(5000);
                                                                                                         }
                                                                                                         else{
@@ -317,69 +330,71 @@ async function Fast(){
                                                                                                                     await page.waitForTimeout(5000);
                                                                                                                     await page.click("button[class='ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only ui-area-btn ui-area-btn-success radius-none margin-right-5px btn-save']", elem => elem.click(), { clickCount: 3 });                                                                                                                await page.waitForTimeout(1000);
                                                                                                                     console.log('Successfully Reserved'.bold .green)
+                                                                                                                    log();
                                                                                                                     await page.waitForTimeout(5000);
                                                                                                                 }
                                                                                                                 else{
                                                                                                                     console.log('All Courts Out of Stock, Better Luck Next Time ):'.red);
-                                                                                                                }
+                                                                                                           }
                                                                                                         
-                                                                                                            }
-                                                                                                        }
+                                                                                                     }
+                                                                                                   }
                                                                                                 
-                                                                                                    }
-                                                                                                }
+                                                                                               }
+                                                                                           }
                                                                                         
-                                                                                            }
-                                                                                        }
-                                                                                
                                                                                     }
-                                                                                }
+                                                                                 }
+                                                                                
+                                                                               }
+                                                                          }
                                                                         
-                                                                            }
-                                                                        }
+                                                                     }
+                                                                  }
                                                                 
-                                                                    }
-                                                                }
+                                                             }
+                                                          }
                                                         
-                                                            }
-                                                        }
-                                                
                                                     }
-                                                    
-                                                }
-                                        
+                                                  }
+                                                
                                             }
+                                                    
+                                           }
+                                 
+                                      }
                                             
-                                        }
-                                
-                                    }
-                                    
-                                }
+                                   }
                         
-                            }
-                            
-                        }
+                             }
+                                    
+                         }
+                        
+                     }
+                           
+                   }
                 
-                    }
+              }
                     
-                }
+         }
         
-            }
+     }
         
-        }
+}
+
         
-        async function checkout(){
-            var page = await givePage();
-            await gen(page);
-            await monitor(page);
-            await fill(page);
-          }
-           
-          checkout();
-    
-        }, null, true, 'America/Los_Angeles');
-          
+async function checkout(){
+    var page = await givePage();
+        await gen(page);
+        await monitor(page);
+        await fill(page);
     }
+           
+    checkout();
+    
+    }, null, true, 'America/Los_Angeles');
+          
+}
 
 }
 
@@ -433,7 +448,7 @@ cron.schedule('30 44 7 * * *', function() {
                 anchors.map(anchor => {
                     const d1 = new Date().getDate();
                     const d2 = d1;
-                    if(anchor.textContent == d1 + 6) {
+                    if(anchor.textContent == d1 + 7) {
                         anchor.click();
                         anchor.click();
                         return
@@ -468,6 +483,7 @@ cron.schedule('30 44 7 * * *', function() {
                 await page.click("button[class='ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only ui-area-btn ui-area-btn-success radius-none margin-right-5px btn-save']", elem => elem.click(), { clickCount: 3 });
                 await page.waitForTimeout(1000);  
                 console.log('Successfully Reserved'.bold .green)
+                log2();
                 await page.waitForTimeout(2000);
                 await browser.close();
             }
@@ -484,6 +500,7 @@ cron.schedule('30 44 7 * * *', function() {
                         await page.click("button[class='ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only ui-area-btn ui-area-btn-success radius-none margin-right-5px btn-save']", elem => elem.click(), { clickCount: 3 });
                         await page.waitForTimeout(1000);
                         console.log('Successfully Reserved'.bold .green)
+                        log2();
                         await page.waitForTimeout(2000);
                         await browser.close();
                     }
@@ -500,6 +517,7 @@ cron.schedule('30 44 7 * * *', function() {
                                 await page.click("button[class='ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only ui-area-btn ui-area-btn-success radius-none margin-right-5px btn-save']", elem => elem.click(), { clickCount: 3 });
                                 await page.waitForTimeout(1000);
                                 console.log('Successfully Reserved'.bold .green)
+                                log2();
                                 await page.waitForTimeout(2000);
                                 await browser.close();
                             }
@@ -517,6 +535,7 @@ cron.schedule('30 44 7 * * *', function() {
                                         await page.click("button[class='ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only ui-area-btn ui-area-btn-success radius-none margin-right-5px btn-save']", elem => elem.click(), { clickCount: 3 });
                                         await page.waitForTimeout(1000);
                                         console.log('Successfully Reserved'.bold .green)
+                                        log2();
                                         await page.waitForTimeout(5000);
                                         await browser.close();
                                     }
@@ -534,6 +553,7 @@ cron.schedule('30 44 7 * * *', function() {
                                                 await page.click("button[class='ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only ui-area-btn ui-area-btn-success radius-none margin-right-5px btn-save']", elem => elem.click(), { clickCount: 3 });
                                                 await page.waitForTimeout(1000);
                                                 console.log('Successfully Reserved'.bold .green)
+                                                log2();
                                                 await page.waitForTimeout(5000);
                                                 await browser.close();
                                             }
@@ -552,6 +572,7 @@ cron.schedule('30 44 7 * * *', function() {
                                                         await page.click("button[class='ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only ui-area-btn ui-area-btn-success radius-none margin-right-5px btn-save']", elem => elem.click(), { clickCount: 3 });
                                                         await page.waitForTimeout(1000);
                                                         console.log('Successfully Reserved'.bold .green)
+                                                        log2();
                                                         await page.waitForTimeout(5000);
                                                         await browser.close();
                                                     }
@@ -569,6 +590,7 @@ cron.schedule('30 44 7 * * *', function() {
                                                                 await page.click("button[class='ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only ui-area-btn ui-area-btn-success radius-none margin-right-5px btn-save']", elem => elem.click(), { clickCount: 3 });
                                                                 await page.waitForTimeout(1000);
                                                                 console.log('Successfully Reserved'.bold .green)
+                                                                log2();
                                                                 await page.waitForTimeout(5000);
                                                                 await browser.close();
                                                             }
@@ -586,6 +608,7 @@ cron.schedule('30 44 7 * * *', function() {
                                                                         await page.click("button[class='ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only ui-area-btn ui-area-btn-success radius-none margin-right-5px btn-save']", elem => elem.click(), { clickCount: 3 });
                                                                         await page.waitForTimeout(1000);
                                                                         console.log('Successfully Reserved'.bold .green)
+                                                                        log2();
                                                                         await page.waitForTimeout(5000); 
                                                                         await browser.close();
                                                                     }
@@ -602,6 +625,7 @@ cron.schedule('30 44 7 * * *', function() {
                                                                                 await page.waitForTimeout(5000);
                                                                                 await page.click("button[class='ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only ui-area-btn ui-area-btn-success radius-none margin-right-5px btn-save']", elem => elem.click(), { clickCount: 3 });                                                                                await page.waitForTimeout(1000);
                                                                                 console.log('Successfully Reserved'.bold .green)
+                                                                                log2();
                                                                                 await page.waitForTimeout(5000);
                                                                                 await browser.close();
                                                                             }
@@ -619,6 +643,7 @@ cron.schedule('30 44 7 * * *', function() {
                                                                                         await page.waitForTimeout(5000);
                                                                                         await page.click("button[class='ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only ui-area-btn ui-area-btn-success radius-none margin-right-5px btn-save']", elem => elem.click(), { clickCount: 3 });                                                                                        await page.waitForTimeout(1000);
                                                                                         console.log('Successfully Reserved'.bold .green)
+                                                                                        log2();
                                                                                         await page.waitForTimeout(5000);
                                                                                         await browser.close();
                                                                                     }
@@ -635,6 +660,7 @@ cron.schedule('30 44 7 * * *', function() {
                                                                                                 await page.waitForTimeout(5000);
                                                                                                 await page.click("button[class='ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only ui-area-btn ui-area-btn-success radius-none margin-right-5px btn-save']", elem => elem.click(), { clickCount: 3 });                                                                                                await page.waitForTimeout(1000);
                                                                                                 console.log('Successfully Reserved'.bold .green)
+                                                                                                log2();
                                                                                                 await page.waitForTimeout(5000);
                                                                                                 await browser.close();
                                                                                             }
@@ -651,6 +677,7 @@ cron.schedule('30 44 7 * * *', function() {
                                                                                                         await page.waitForTimeout(5000);
                                                                                                         await page.click("button[class='ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only ui-area-btn ui-area-btn-success radius-none margin-right-5px btn-save']", elem => elem.click(), { clickCount: 3 });                                                                                                        await page.waitForTimeout(1000);
                                                                                                         console.log('Successfully Reserved'.bold .green)
+                                                                                                        log2();
                                                                                                         await page.waitForTimeout(5000);
                                                                                                         await browser.close();
                                                                                                     }
@@ -667,6 +694,7 @@ cron.schedule('30 44 7 * * *', function() {
                                                                                                                 await page.waitForTimeout(5000);
                                                                                                                 await page.click("button[class='ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only ui-area-btn ui-area-btn-success radius-none margin-right-5px btn-save']", elem => elem.click(), { clickCount: 3 });                                                                                                                await page.waitForTimeout(1000);
                                                                                                                 console.log('Successfully Reserved'.bold .green)
+                                                                                                                log2();
                                                                                                                 await page.waitForTimeout(5000);
                                                                                                                 await browser.close();
                                                                                                             }
@@ -735,4 +763,58 @@ cron.schedule('30 44 7 * * *', function() {
 
 
 }
+
+
+async function log() {
+
+    const memberid = credentials.memberid
+    const password = credentials.password
+
+for (let i = 0; i < memberid.length ; i++){
     
+    const b_url = 'https://www.bellevueclub.com/wp-content/themes/bc/images/bellevue-club-mini-logo.png'
+
+    hook.setUsername('GameTime');
+    hook.setAvatar(b_url);
+    const embed = new MessageBuilder()
+    .setTitle('🎾Successful Reservation🎾')
+    .addField('Site', 'Bellevue Club', true)
+    .addField('Mode', 'Fast', true)
+    .addField('Email', '||' + memberid[i] + '||')
+    .addField('Password', '||' + password[i] + '||')
+    .setColor('#73ac0e')
+    .setThumbnail('https://i.pinimg.com/originals/f1/a8/d5/f1a8d55545610614316bdaba9a1642a7.jpg')
+    .setDescription('')
+    .setImage('')
+    .setFooter('GameTime', b_url)
+    .setTimestamp();
+    hook.send(embed);
+}
+}
+
+async function log2() {
+
+    const memberid = credentials.memberid
+    const password = credentials.password
+
+for (let i = 0; i < memberid.length ; i++){
+    
+    const b_url = 'https://www.bellevueclub.com/wp-content/themes/bc/images/bellevue-club-mini-logo.png'
+
+    hook.setUsername('GameTime');
+    hook.setAvatar(b_url);
+    const embed = new MessageBuilder()
+    .setTitle('🎾Successful Reservation🎾')
+    .addField('Site', 'Bellevue Club', true)
+    .addField('Mode', 'Safe', true)
+    .addField('MemberID', '||' + memberid[i] + '||')
+    .addField('Password', '||' + password[i] + '||')
+    .setColor('#73ac0e')
+    .setThumbnail('https://i.pinimg.com/originals/f1/a8/d5/f1a8d55545610614316bdaba9a1642a7.jpg')
+    .setDescription('')
+    .setImage('')
+    .setFooter('GameTime', b_url)
+    .setTimestamp();
+    hook.send(embed);
+}
+}
